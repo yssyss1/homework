@@ -459,13 +459,13 @@ def heuristic(env, s):
 if __name__=="__main__":
     #env = LunarLander()
     env = LunarLanderContinuous()
-    s = env.reset()
+    s = env._reset()
     total_reward = 0
     steps = 0
     while True:
         a = heuristic(env, s)
-        s, r, done, info = env.step(a)
-        env.render()
+        s, r, done, info = env._step(a)
+        env._render()
         total_reward += r
         if steps % 20 == 0 or done:
             print(["{:+0.2f}".format(x) for x in s])
